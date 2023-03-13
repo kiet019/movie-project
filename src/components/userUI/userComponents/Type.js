@@ -10,6 +10,7 @@ export default function Type() {
   // Hàm để lấy danh sách contact từ API
   useEffect(() => {
     if (type === "series") {
+      // eslint-disable-next-line
       pathParam = "/1";
     } else if (type === "movies") {
       pathParam = "/2";

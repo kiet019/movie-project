@@ -2,8 +2,20 @@
 $color-logo: rgb(184, 4, 4);
 $background-color: rgb(17, 17, 17);
 $inside-color: rgb(48, 47, 47);
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
 * {
   box-sizing: border-box;
+}
+button:hover {
+  cursor: pointer;
 }
 input::placeholder {
   color: rgb(168, 168, 168);
@@ -33,9 +45,8 @@ img {
     width: fit-content;
     display: block;
     text-align: center;
-    margin-left: 30%;
     .logo {
-      font-size: 70px;
+      font-size: 50px;
       color: $color-logo;
     }
   }
@@ -71,9 +82,15 @@ img {
     }
   }
   .login-user {
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .button-place {
+    background-color: rgb(0, 0, 0, 0);
+    border: 0px;
+    padding: 0px;
     .login {
-      font-size: 50px;
+      font-size: 45px;
       color: $color-logo;
     }
   }
@@ -414,10 +431,6 @@ img {
     justify-content: space-around;
     font-weight: 400;
   }
-  .open-modal:hover {
-    cursor: pointer;
-    
-  }
 }
 .modal-show {
   background-color: rgba(0, 0, 0, 0.5);
@@ -469,5 +482,76 @@ img {
         background-color: #ad0101;
       }
     }
+  }
+}
+.contact {
+  h2 {
+    margin: 0px;
+    color: white;
+  }
+  form {
+    border-radius: 10px;
+    padding: 10px 50px 0px 50px;
+    border: 2px solid $color-logo;
+    margin: 0px 30% 100px 30%;
+    height: fit-content;
+    background-color: $inside-color;
+    input {
+      color: white;
+    }
+    .error {
+      color: red;
+    }
+    label {
+      color: white;
+    }
+    fieldset {
+      border: 1px solid white;
+    }
+    .name {
+      display: grid;
+      grid-template-columns: 5fr 1fr 5fr;
+    }
+    div {
+      margin-bottom: 5px;
+    }
+    #demo-simple-select-autowidth {
+      padding: 13px 30px 13px 13px;
+    }
+    #outlined-basic {
+      color: white;
+    }
+  }
+}
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  color: white;
+  h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+
+  &-description,
+  .mission-description,
+  .team-description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 20px;
+  }
+
+  .mission-description,
+  .team-description {
+    margin-left: 20px;
+  }
+
+  .team-description {
+    margin-bottom: 0;
   }
 }
