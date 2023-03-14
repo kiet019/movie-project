@@ -7,8 +7,13 @@ import AdminUI from "./adminUI/AdminUI";
 import HomePage from "./userUI/userComponents/HomePage";
 import Type from "./userUI/userComponents/Type";
 import Details from "./userUI/userComponents/modal/Details";
-import Contact from "./userUI/Contact";
-import About from "./userUI/About";
+import Contact from "./userUI/userComponents/Contact";
+import About from "./userUI/userComponents/About";
+import News from "./userUI/userComponents/News";
+import ShowFilm from "./adminUI/adminComponents/ShowFilm";
+import AddFilm from "./adminUI/adminComponents/AddFilm";
+import UpdateFilm from "./adminUI/adminComponents/UpdateFilm";
+import ShowContact from "./userUI/userComponents/ShowContact";
 export default function Router() {
   return (
     <>
@@ -16,13 +21,16 @@ export default function Router() {
         <Route exact path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<UserUI Children={<HomePage/>}/>}/>
         <Route path="/films/:type" element={<UserUI Children={<Type/>}/>}/>
-        <Route path="/contact" element={<UserUI Children={<Contact/>}/>}/>
+        <Route path="/contact" element={<UserUI Children={<Protected><Contact/></Protected>}/>}/>
+        <Route path="/show-contact" element={<UserUI Children={<Protected><ShowContact/></Protected>}/>}/>
         <Route path="/about" element={<UserUI Children={<About/>}/>}/>
+        <Route path="/news" element={<UserUI Children={<News/>}/>}/>
         <Route path="/film/details" element={<UserUI Children={<Details/>}/>}/>
-        <Route path="/admin" element={<Protected><AdminUI /></Protected>} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<UserUI Children={<Login />}/>} />
+        <Route path="/dashboard" element={<Protected><AdminUI Children={<ShowFilm/>}/></Protected>} />
+        <Route path="/film/add" element={<Protected><AdminUI Children={<AddFilm/>}/></Protected>} />
+        <Route path="/film/update" element={<Protected><AdminUI Children={<UpdateFilm/>}/></Protected>} />
       </Routes>
-      
     </>
   );
 }

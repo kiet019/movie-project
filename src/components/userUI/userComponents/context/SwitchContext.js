@@ -20,10 +20,10 @@ function SwitchProvider({ children }) {
       })
       .then((data) => {
         setAPIData(data);
+        console.log(data)
       })
       .catch((error) => console.log(error.message));
-      // eslint-disable-next-line
-  }, []);
+  }, [baseURL]);
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % banners.length);

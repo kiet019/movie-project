@@ -14,12 +14,12 @@ export default function Login() {
   };
   useEffect(()=>{
     if(user!=null){
-      navigate('/')
+      navigate('/home')
     }
     // eslint-disable-next-line
   },[user])
   return (
-    <div>
+    <div className='login-place'>
       <GoogleButton onClick={handleGoogleSignIn}/>
     </div>
   )

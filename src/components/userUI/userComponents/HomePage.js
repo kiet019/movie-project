@@ -24,9 +24,6 @@ export default function HomePage() {
     fetchContacts();
     
   }, []);
-  useEffect(() => {
-		window.scrollTo(0,0)
-	})
   return (
     <div className='home'>
         <Banner/>

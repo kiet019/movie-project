@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function AdminBody() {
+export default function AdminBody({Children}) {
   return (
-    <div>AdminBody</div>
+    <div className='admin-body'>
+      {Children}
+    </div>
   )
 }

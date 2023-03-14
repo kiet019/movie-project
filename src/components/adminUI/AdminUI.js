@@ -1,15 +1,12 @@
-import React from 'react'
-import AdminBody from './AdminBody'
-import AdminFooter from './AdminFooter'
-import AdminHeader from './AdminHeader'
+import React from "react";
+import AdminBody from "./AdminBody";
+import AdminHeader from "./AdminHeader";
 
-
-export default function AdminUI() {
+export default function AdminUI({ Children }) {
   return (
-    <div>
-        <AdminHeader/>
-        <AdminBody/>
-        <AdminFooter/>
+    <div className="admin-ui">
+        <AdminHeader />
+        <AdminBody Children={Children} />
     </div>
-  )
+  );
 }

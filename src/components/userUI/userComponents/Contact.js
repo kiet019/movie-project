@@ -14,19 +14,25 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import SendIcon from "@mui/icons-material/Send";
 import Button from "@mui/material/Button";
-import DialogOpen from "../Dialog";
+import DialogOpen from "../../Dialog";
+import { UserAuth } from "../../login/AuthContext";
 
 // function generateUniqueId() {
 //   return parseInt(uuidv4().replace(/-/g, ""), 16);
 // }
 export default function Contact() {
+  const {user} = UserAuth()
   const [isDisabled, setIsDisabled] = useState(true);
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const formik = useFormik({
     initialValues: {
+      usercode: user.uid,
       fname: "",
       lname: "",
       email: "",
