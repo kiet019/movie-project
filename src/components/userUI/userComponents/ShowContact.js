@@ -22,33 +22,23 @@ export default function ShowContact() {
       .then((data) => {
         setContact(data);
       });
+      // eslint-disable-next-line 
   }, []);
   return (
     <>
       <h2>Welcome {user.displayName}</h2>
       <div
         className="show-contact"
-        style={{ gridTemplateRows: `repeat(` + contacts.length + `, 400px)` }}
+        style={{ gridTemplateRows: `repeat(` + contacts.length + `, 450px)` }}
       >
         {contacts.length > 0
           ? contacts.map((contact) => (
-              <div className="contact-card" key={contact.id}>
-                {/* 
-                <div style={{ color: "white" }}>Title {contact.title}</div>
-                <TextField
-                  id="outlined-basic"
-                  variant="outlined"
-                  multiline
-                  rows={10}
-                  fullWidth
-                  value={contact.message}
-                  name="message"
-                /> */}
+              <div className="contact-card" key={contact.id} style={{border: `2px solid ${contact.status ? "green" : "red"}`}}>
                 <div class="message">
                 <h2>
-                  Title: {contact.title}
+                  {contact.title}
                 </h2>
-                  <div class="content">
+                  <div className="content">
                     <TextField
                       id="outlined-basic"
                       variant="outlined"
