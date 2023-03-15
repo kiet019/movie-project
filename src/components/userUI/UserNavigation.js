@@ -1,4 +1,3 @@
-import { Badge } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -47,12 +46,10 @@ export default function UserNavigation() {
               <div className="text">Contact</div>
             </li>
           </Link>
-          <Link to="/show-contact">
+          <Link to="/account">
             <li>
-              <Badge badgeContent={4} color="primary">
-                <span className="material-icons nav">mail</span>
-              </Badge>
-              <div className="text">Notification</div>
+              <span className="material-icons nav">manage_accounts</span>
+              <div className="text">Accounts</div>
             </li>
           </Link>
         </ul>

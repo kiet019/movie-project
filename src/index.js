@@ -6,6 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./components/login/AuthContext";
 import { SwitchProvider } from "./components/userUI/userComponents/context/SwitchContext";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import favorReducer from "./features/Favories"
+export const store = configureStore({
+  reducer: {
+    favors: favorReducer,
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +21,9 @@ root.render(
     <AuthContextProvider>
       <BrowserRouter>
         <SwitchProvider>
-          <App />
+          <Provider store={store}>
+            <App />
+          </Provider>
         </SwitchProvider>
       </BrowserRouter>
     </AuthContextProvider>

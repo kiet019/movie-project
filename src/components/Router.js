@@ -14,6 +14,7 @@ import ShowFilm from "./adminUI/adminComponents/ShowFilm";
 import AddFilm from "./adminUI/adminComponents/AddFilm";
 import UpdateFilm from "./adminUI/adminComponents/UpdateFilm";
 import ShowContact from "./userUI/userComponents/ShowContact";
+import ShowAdminContact from "./adminUI/adminComponents/ShowAdminContact";
 export default function Router() {
   return (
     <>
@@ -26,10 +27,11 @@ export default function Router() {
         <Route path="/film/details" element={<UserUI Children={<Details/>}/>}/>
         <Route path="/login" element={<UserUI Children={<Login />}/>} />
         <Route path="/contact" element={<Protected><UserUI Children={<Contact/>}/></Protected>}/>
-        <Route path="/show-contact" element={<Protected><UserUI Children={<ShowContact/>}/></Protected>}/>
+        <Route path="/account" element={<Protected><UserUI Children={<ShowContact/>}/></Protected>}/>
         <Route path="/dashboard" element={<Protected><AdminUI Children={<ShowFilm/>}/></Protected>} />
         <Route path="/film/add" element={<Protected><AdminUI Children={<AddFilm/>}/></Protected>} />
         <Route path="/film/update" element={<Protected><AdminUI Children={<UpdateFilm/>}/></Protected>} />
+        <Route path="/admin/contact" element={<Protected><AdminUI Children={<ShowAdminContact/>}/></Protected>} />
       </Routes>
     </>
   );

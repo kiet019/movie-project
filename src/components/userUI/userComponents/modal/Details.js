@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from "react";
 import ModalCase from "./ModalCase";
-
 export default function Details() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,7 +38,7 @@ export default function Details() {
       </div>
       {/* eslint-disable-next-line */}
       <button onClick={() => setIsOpen(true)} className="open-modal">
-        <span class="material-icons">ondemand_video</span>
+        <span className="material-icons">ondemand_video</span>
       </button>
       {isOpen && <ModalCase setIsOpen={setIsOpen} />}
     </div>

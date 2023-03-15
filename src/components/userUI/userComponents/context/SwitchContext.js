@@ -20,13 +20,15 @@ function SwitchProvider({ children }) {
       })
       .then((data) => {
         setAPIData(data);
-        console.log(data)
+        console.log(data);
       })
       .catch((error) => console.log(error.message));
-  }, [baseURL]);
+    // eslint-disable-next-line
+  }, []);
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % banners.length);
+      if (banners.length > 0)
+        setIndex((prevIndex) => (prevIndex + 1) % banners.length);
     }, 5000);
     return () => clearInterval(interval);
   }, [banners.length]);
