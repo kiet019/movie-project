@@ -729,20 +729,23 @@ h2 {
     }
     margin: 20px 25%;
     border-radius: 10px;
-    h2 {
+    background-color: white;
+    h4 {
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;
       display: block;
-      background-color: gray;
+      color: black;
       height: 40px;
       font-size: 40px;
-      display: flex;
+      padding-left: 10px;
       align-items: center;
+      margin: 0px
     }
     .content {
       textarea {
         padding: 10px 50px;
         font-size: x-large;
+        height: fit-content;
       }
     }
   }

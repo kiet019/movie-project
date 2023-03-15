@@ -34,10 +34,10 @@ export default function ShowContact() {
         {contacts.length > 0
           ? contacts.map((contact) => (
               <div className="contact-card" key={contact.id} style={{border: `2px solid ${contact.status ? "green" : "red"}`}}>
-                <div class="message">
-                <h2>
-                  {contact.title}
-                </h2>
+                <div className="message">
+                <h4>
+                  We got it - RE: {contact.title}
+                </h4>
                   <div className="content">
                     <TextField
                       id="outlined-basic"

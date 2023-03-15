@@ -29,12 +29,6 @@ export default function UserNavigation() {
               <div className="text">Movies</div>
             </li>
           </Link>
-          <Link to="/contact">
-            <li>
-              <span className="material-icons nav">contact_support</span>
-              <div className="text">Contact</div>
-            </li>
-          </Link>
           <Link to="/news">
             <li>
               <span className="material-icons nav">feed</span>
@@ -45,6 +39,12 @@ export default function UserNavigation() {
             <li>
               <span className="material-icons nav">info</span>
               <div className="text">About Us</div>
+            </li>
+          </Link>
+          <Link to="/contact">
+            <li>
+              <span className="material-icons nav">contact_support</span>
+              <div className="text">Contact</div>
             </li>
           </Link>
           <Link to="/show-contact">

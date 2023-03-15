@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Tooltip from "@mui/material/Tooltip";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../login/AuthContext";
+import DashboardIcon from '@mui/icons-material/Dashboard';
 function AdminHeader() {
   const { user, logOut } = UserAuth();
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -49,7 +50,7 @@ function AdminHeader() {
                 textDecoration: "none",
               }}
             >
-              HOME
+              <DashboardIcon/>
             </Typography>
             <Typography
               variant="h6"
@@ -72,7 +73,7 @@ function AdminHeader() {
               variant="h6"
               noWrap
               component="a"
-              href="/dashboard"
+              href="/admin/contact"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },

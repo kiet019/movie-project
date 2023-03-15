@@ -21,12 +21,12 @@ export default function Router() {
         <Route exact path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<UserUI Children={<HomePage/>}/>}/>
         <Route path="/films/:type" element={<UserUI Children={<Type/>}/>}/>
-        <Route path="/contact" element={<UserUI Children={<Protected><Contact/></Protected>}/>}/>
-        <Route path="/show-contact" element={<UserUI Children={<Protected><ShowContact/></Protected>}/>}/>
         <Route path="/about" element={<UserUI Children={<About/>}/>}/>
         <Route path="/news" element={<UserUI Children={<News/>}/>}/>
         <Route path="/film/details" element={<UserUI Children={<Details/>}/>}/>
         <Route path="/login" element={<UserUI Children={<Login />}/>} />
+        <Route path="/contact" element={<Protected><UserUI Children={<Contact/>}/></Protected>}/>
+        <Route path="/show-contact" element={<Protected><UserUI Children={<ShowContact/>}/></Protected>}/>
         <Route path="/dashboard" element={<Protected><AdminUI Children={<ShowFilm/>}/></Protected>} />
         <Route path="/film/add" element={<Protected><AdminUI Children={<AddFilm/>}/></Protected>} />
         <Route path="/film/update" element={<Protected><AdminUI Children={<UpdateFilm/>}/></Protected>} />
